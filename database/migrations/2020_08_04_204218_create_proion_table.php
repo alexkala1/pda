@@ -13,7 +13,7 @@ class CreateProionTable extends Migration
      */
     public function up()
     {
-        Schema::create('proion', function (Blueprint $table) {
+        Schema::create('proions', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->string('name');
@@ -21,10 +21,10 @@ class CreateProionTable extends Migration
 			$table->string('type');
 			$table->softDeletes();
             $table->string('category');
-            $table->string('ingredients');
-            $table->float('price');
+            $table->string('ingredients')->nullable();
+            $table->float('price', 2);
             $table->boolean('availability');
-            $table->string('notes');
+            $table->string('notes')->nullable();
         });
     }
 

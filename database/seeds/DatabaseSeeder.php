@@ -4,6 +4,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
 use App\Trapezi;
+use App\Proion;
 
 
 class DatabaseSeeder extends Seeder
@@ -27,6 +28,17 @@ class DatabaseSeeder extends Seeder
 			Trapezi::insert([
 				'meros' => 'Paralia',
 				'customers' => mt_rand(2, 6)
+			]);
+		}
+
+		for ($i = 0; $i < 50; $i++) {
+			Proion::insert([
+				'name' => 'proion ' . $i,
+				'prefix' => 'wip',
+				'type' => 'WIP',
+				'category' => 'drink',
+				'price' => mt_rand(10, 100) / 10,
+				'availability' => true,
 			]);
 		}
 	}
