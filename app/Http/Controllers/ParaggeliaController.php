@@ -45,7 +45,7 @@ class ParaggeliaController extends Controller
      */
     public function show($id)
     {
-        //
+        return view ('paraggelia.show', ['id' => $id]);
     }
 
     /**
