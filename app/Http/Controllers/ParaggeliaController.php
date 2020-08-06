@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Proion;
 
 class ParaggeliaController extends Controller
 {
@@ -45,7 +46,7 @@ class ParaggeliaController extends Controller
      */
     public function show($id)
     {
-        return view ('paraggelia.show', ['id' => $id]);
+        return view ('paraggelia.show', ['id' => $id, 'products' => Proion::all()]);
     }
 
     /**

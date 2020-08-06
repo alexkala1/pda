@@ -31,7 +31,7 @@ class DatabaseSeeder extends Seeder
 			]);
 		}
 
-		for ($i = 0; $i < 50; $i++) {
+		for ($i = 1; $i <= 50; $i++) {
 			Proion::insert([
 				'name' => 'proion ' . $i,
 				'prefix' => 'wip',

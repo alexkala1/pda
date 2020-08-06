@@ -9,11 +9,11 @@
 		</div>
 	</div>
 	<div class="row justify-content-center">
-	@for($i = 1; $i <=20; $i++)
+	@foreach($products as $product)
 		<div class="col-md-3 text-center py-2">
-			<a class="btn btn-primary" href="#">product {{ $i }}</a>
+			<a class="btn btn-primary" href="#">{{ $product->name }} - {{ $product->price }}€</a>
 		</div>
-	@endfor
+	@endforeach
 </div>
 </div>
 
