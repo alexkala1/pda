@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
+use App\Trapezi;
 
 
 class DatabaseSeeder extends Seeder
@@ -23,7 +24,7 @@ class DatabaseSeeder extends Seeder
 		]);
 
 		for ($i = 0; $i < 50; $i++){
-			DB::table('trapezi')->insert([
+			Trapezi::insert([
 				'meros' => 'Paralia',
 				'customers' => mt_rand(2, 6)
 			]);
