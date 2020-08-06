@@ -19,6 +19,6 @@ class Trapezi extends Model
 
     public function paraggelies()
     {
-        return $this->hasMany('App\paraggelia');
+        return $this->hasOne('App\paraggelia');
     }
 }
