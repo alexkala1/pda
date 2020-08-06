@@ -18,7 +18,8 @@ class CreateProionTable extends Migration
             $table->timestamps();
             $table->string('name');
             $table->string('prefix');
-            $table->string('type');
+			$table->string('type');
+			$table->softDeletes();
             $table->string('category');
             $table->string('ingredients');
             $table->float('price');

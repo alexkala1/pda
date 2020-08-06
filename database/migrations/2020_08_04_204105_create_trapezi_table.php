@@ -17,7 +17,8 @@ class CreateTrapeziTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string('meros');
-            $table->float('price');
+			$table->float('price');
+			$table->softDeletes();
             $table->integer('customers');
             $table->bigInteger('paraggelia_id');
             $table->bigInteger('user_id');

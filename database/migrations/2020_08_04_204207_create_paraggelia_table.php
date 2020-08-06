@@ -20,7 +20,8 @@ class CreateParaggeliaTable extends Migration
             $table->boolean('payment_status');
             $table->integer('payment_amount')->nullable();
             $table->string('notes')->nullable();
-            $table->string('status');
+			$table->string('status');
+			$table->softDeletes();
             $table->bigInteger('user_id');
             $table->bigInteger('trapezi_id');
             $table->bigInteger('proion_id');
