@@ -30,5 +30,6 @@ Route::get('/mageiras', 'HomeController@mageiras')->name('mageiras');
 // route for subcategories store
 Route::get('/trapezi', 'TrapeziController@index')->name('trapezi.index');
 Route::get('/trapezi/{id}', 'TrapeziController@show')->name('trapezi.show');
-Route::get('/paraggelia', 'ParaggeliaController@index')->name('paraggelies');
+Route::get('/paraggelia', 'ParaggeliaController@index')->name('paraggelia.index');
+Route::get('/paraggelia/{trapezi_id}', 'ParaggeliaController@show')->name('paraggelia.show');
 Route::get('/proion', 'HomeController@proionta')->name('proionta');
