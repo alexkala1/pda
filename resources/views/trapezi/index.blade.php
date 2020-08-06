@@ -14,7 +14,7 @@
 						Order status: WIP
 					</div>
 					<br>
-					<a href="{{ route('trapezi_show' , $i) }}" type="button" class="btn btn-block btn-primary">Submit an order</a>
+					<a href="{{ route('trapezi.show' , $i) }}" type="button" class="btn btn-block btn-primary">Submit an order</a>
 				</div>
 			</div>
 	</div>

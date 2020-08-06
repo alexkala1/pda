@@ -13,7 +13,7 @@ class TrapeziController extends Controller
      */
     public function index()
     {
-        return view('trapezi');
+        return view('trapezi.index');
     }
 
     /**
@@ -45,7 +45,7 @@ class TrapeziController extends Controller
      */
     public function show($id)
     {
-        return view('trapezi_show', ['id' => $id]);
+        return view('trapezi.show', ['id' => $id]);
     }
 
     /**
