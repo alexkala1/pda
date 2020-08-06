@@ -6,8 +6,6 @@
 		<div class="col-md-8 text-center">
 			<h1>trapezi {{ $id }}</h1>
 			<br>
-			Paraggelia
-			<br>
 			@if(isset($paraggelia))
 			{{ $paraggelia }}
 			@else
