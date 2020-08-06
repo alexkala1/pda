@@ -10,6 +10,10 @@
 			{{ $paraggelia }}
 			@else
 			Den yparxoun paraggelies.
+			<br>
+			<div class="row py-5 text-center justify-content-center">
+				<a href="{{ route('paraggelia.show' , $id) }}" type="button" class="btn btn-block btn-primary">Submit an order</a>
+			</div>
 			@endif
 		</div>
 	</div>

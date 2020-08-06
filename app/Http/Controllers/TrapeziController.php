@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Trapezi;
+use Illuminate\Support\Facades\DB;
+
 
 class TrapeziController extends Controller
 {
@@ -12,8 +15,9 @@ class TrapeziController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('trapezi.index');
+	{
+		$trapezia = Trapezi::all();
+        return view('trapezi.index', ['trapezia' => $trapezia]);
     }
 
     /**

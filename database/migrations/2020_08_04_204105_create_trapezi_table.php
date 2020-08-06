@@ -13,15 +13,14 @@ class CreateTrapeziTable extends Migration
      */
     public function up()
     {
-        Schema::create('trapezi', function (Blueprint $table) {
+        Schema::create('trapezis', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->string('meros');
-			$table->float('price');
 			$table->softDeletes();
             $table->integer('customers');
-            $table->bigInteger('paraggelia_id');
-            $table->bigInteger('user_id');
+            $table->bigInteger('paraggelia_id')->nullable();
+            $table->bigInteger('user_id')->nullable();
         });
     }
 

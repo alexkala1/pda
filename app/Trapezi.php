@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Trapezi extends Model
 {
-    use SoftDeletes;
+	use SoftDeletes;
 
     protected $fillable = [
         'meros',
@@ -20,5 +20,18 @@ class Trapezi extends Model
     public function paraggelies()
     {
         return $this->hasOne('App\paraggelia');
-    }
+	}
+
+	public function getStatusAttribute()
+	{
+		if ($this->customers == null) {
+			return 'Το τραπέζι είναι άδειο';
+		}
+
+		if ($this->paraggelia_id == null) {
+			return 'Pending';
+		} else {
+			return 'An order is awaiting';
+		}
+	}
 }
