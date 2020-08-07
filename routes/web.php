@@ -31,6 +31,6 @@ Route::get('/mageiras', 'HomeController@mageiras')->name('mageiras');
 Route::get('/customerTable', 'CustomerTableController@index')->name('customer_table.index');
 Route::get('/customerTable/{id}', 'CustomerTableController@show')->name('customer_table.show');
 Route::get('/customerTable/{id}/order', 'OrderController@show')->name('order.show');
-Route::post('/customerTable/{customerTable_id}/order/', 'OrderController@store')->name('order.store');
+Route::post('/order', 'OrderController@store')->name('order.store');
 Route::get('/order', 'OrderController@index')->name('order.index');
 Route::get('/product', 'HomeController@productta')->name('productta');

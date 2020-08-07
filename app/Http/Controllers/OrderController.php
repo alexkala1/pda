@@ -36,7 +36,13 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
+		Order::create([
+			'user_id' => auth()->user()->id,
+			'product_id' => $request->product_id,
+			'customerTable_id' => $request->customerTable_id,
+			'price' => $request->price
+		]);
+		return back()->with('success_message', 'Successfully Placed Order');
     }
 
     /**

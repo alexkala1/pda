@@ -17,10 +17,10 @@ class CreateOrdersTable extends Migration
             $table->id();
             $table->timestamps();
             $table->float('price');
-            $table->boolean('payment_status');
+            $table->string('payment_status')->default('pending');
             $table->integer('payment_amount')->nullable();
             $table->string('notes')->nullable();
-			$table->string('status');
+			$table->string('status')->nullable();
 			$table->softDeletes();
             $table->bigInteger('user_id');
             $table->bigInteger('customerTable_id');

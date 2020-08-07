@@ -11,10 +11,11 @@
 	<div class="row justify-content-center">
 		@foreach($products as $product)
 		<div class="col-md-3 text-center py-2">
-			<form method="POST" action="{{ route('order.store', $product->id) }}">
+			<form method="POST" action="{{ route('order.store') }}">
 				@csrf
-				<button class="btn btn-primary" name="id" value="{{ $product->id }}">{{ $product->name }} - {{ $product->price }}€</button>
+				<button class="btn btn-primary" name="product_id" value="{{ $product->id }}">{{ $product->name }} - {{ $product->price }}€</button>
 				<input type="hidden" name="customerTable_id" value="{{ $id }}">
+				<input type="hidden" name="price" value="{{ $product->price }}">
 			</form>
 		</div>
 		@endforeach
