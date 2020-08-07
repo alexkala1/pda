@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Paraggelia extends Model
+class Order extends Model
 {
 	use SoftDeletes;
 
@@ -16,17 +16,17 @@ class Paraggelia extends Model
 		'notes',
 		'status',
 		'user_id',
-		'trapezi_id',
-		'proion_id',
+		'customerTable_id',
+		'product_id',
 	];
 
-	public function trapezia()
+	public function customerTables()
 	{
-		return $this->belongsTo('App\Trapezi');
+		return $this->belongsTo('App\CustomerTable');
 	}
 
-	public function proionta()
+	public function products()
 	{
-		return $this->hasMany('App\proion');
+		return $this->hasMany('App\Product');
 	}
 }

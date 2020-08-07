@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Trapezi;
-use Illuminate\Support\Facades\DB;
+use App\CustomerTable;
+use App\Order;
 
 
-class TrapeziController extends Controller
+class CustomerTableController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +16,8 @@ class TrapeziController extends Controller
      */
     public function index()
 	{
-		$trapezia = Trapezi::all();
-        return view('trapezi.index', ['trapezia' => $trapezia]);
+		$customerTables = CustomerTable::all();
+        return view('customer_table.index', ['customerTables' => $customerTables]);
     }
 
     /**
@@ -49,7 +49,7 @@ class TrapeziController extends Controller
      */
     public function show($id)
     {
-        return view('trapezi.show', ['id' => $id]);
+        return view('customer_table.show', ['id' => $id, 'order' => Order::where('customerTable_id', $id)->first()]);
     }
 
     /**

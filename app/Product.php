@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Proion extends Model
+class Product extends Model
 {
     use SoftDeletes;
 
@@ -20,8 +20,8 @@ class Proion extends Model
         'notes',
     ];
 
-    public function paraggelies()
+    public function orders()
     {
-        return $this->belongsTo('App\Paraggelia');
+        return $this->belongsTo('App\Order');
     }
 }

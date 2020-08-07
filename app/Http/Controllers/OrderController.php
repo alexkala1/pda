@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Proion;
-use App\Paraggelia;
+use App\Product;
+use App\Order;
 
-class ParaggeliaController extends Controller
+class OrderController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class ParaggeliaController extends Controller
      */
     public function index()
     {
-        return view('paraggelia.index', ['paraggelies' => Paraggelia::all()]);
+        return view('order.index', ['paraggelies' => Order::all()]);
     }
 
     /**
@@ -47,10 +47,10 @@ class ParaggeliaController extends Controller
      */
 	public function show($id)
     {
-        return view ('paraggelia.show', [
+        return view ('order.show', [
 			'id' => $id,
-			'products' => Proion::all(),
-			'paraggelia' => Paraggelia::where('trapezi_id', $id)->first()
+			'products' => Product::all(),
+			'order' => Order::where('customerTable_id', $id)->first()
 			]);
     }
 

@@ -14,8 +14,8 @@
 					</div>
 					@endif
 
-					<a href="{{ route('trapezi.index') }}" type="button" class="btn btn-primary">Τραπεζια</a>
-					<a href="{{ route('paraggelia.index') }}" type="button" class="btn btn-primary">Παραγγελιες</a>
+					<a href="{{ route('customer_table.index') }}" type="button" class="btn btn-primary">Τραπεζια</a>
+					<a href="{{ route('order.index') }}" type="button" class="btn btn-primary">Παραγγελιες</a>
 				</div>
 			</div>
 		</div>

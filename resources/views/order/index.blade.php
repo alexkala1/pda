@@ -2,7 +2,7 @@
 
 @section('content')
 
-@if(isset($paraggelia))
+@if(isset($order))
 <h1 class="text-center">wow</h1>
 @else
 <h1 class="text-center">No orders available</h1>

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateParaggeliaTable extends Migration
+class CreateOrdersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateParaggeliaTable extends Migration
      */
     public function up()
     {
-        Schema::create('paraggelias', function (Blueprint $table) {
+        Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->float('price');
@@ -23,8 +23,8 @@ class CreateParaggeliaTable extends Migration
 			$table->string('status');
 			$table->softDeletes();
             $table->bigInteger('user_id');
-            $table->bigInteger('trapezi_id');
-            $table->bigInteger('proion_id');
+            $table->bigInteger('customerTable_id');
+            $table->bigInteger('product_id');
         });
     }
 
@@ -35,6 +35,6 @@ class CreateParaggeliaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('paraggelia');
+        Schema::dropIfExists('orders');
     }
 }

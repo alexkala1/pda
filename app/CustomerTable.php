@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Trapezi extends Model
+class CustomerTable extends Model
 {
 	use SoftDeletes;
 
@@ -13,13 +13,13 @@ class Trapezi extends Model
         'meros',
         'price',
         'customers',
-        'paraggelia_id',
+        'order_id',
         'user_id',
     ];
 
-    public function paraggelies()
+    public function Orders()
     {
-        return $this->hasOne('App\paraggelia');
+        return $this->hasOne('App\Order');
 	}
 
 	public function getStatusAttribute()
@@ -28,7 +28,7 @@ class Trapezi extends Model
 			return 'Το τραπέζι είναι άδειο';
 		}
 
-		if ($this->paraggelia_id == null) {
+		if ($this->order_id == null) {
 			return 'Pending';
 		} else {
 			return 'An order is awaiting';
