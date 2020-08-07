@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Order;
+Use Alert;
+
 
 class OrderController extends Controller
 {
@@ -42,7 +44,8 @@ class OrderController extends Controller
 			'customerTable_id' => $request->customerTable_id,
 			'price' => $request->price
 		]);
-		return back()->with('success_message', 'Successfully Placed Order');
+		Alert::alert('success', 'Successfully Placed Order');
+		return back();
     }
 
     /**
