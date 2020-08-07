@@ -36,7 +36,7 @@ class ParaggeliaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request->all());
     }
 
     /**
@@ -45,9 +45,13 @@ class ParaggeliaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+	public function show($id)
     {
-        return view ('paraggelia.show', ['id' => $id, 'products' => Proion::all()]);
+        return view ('paraggelia.show', [
+			'id' => $id,
+			'products' => Proion::all(),
+			'paraggelia' => Paraggelia::where('trapezi_id', $id)->first()
+			]);
     }
 
     /**
