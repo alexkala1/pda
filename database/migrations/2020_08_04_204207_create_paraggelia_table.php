@@ -13,7 +13,7 @@ class CreateParaggeliaTable extends Migration
      */
     public function up()
     {
-        Schema::create('paraggelia', function (Blueprint $table) {
+        Schema::create('paraggelias', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->float('price');

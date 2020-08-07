@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Proion;
+use App\Paraggelia;
 
 class ParaggeliaController extends Controller
 {
@@ -14,7 +15,7 @@ class ParaggeliaController extends Controller
      */
     public function index()
     {
-        return view('paraggelia');
+        return view('paraggelia.index', ['paraggelies' => Paraggelia::all()]);
     }
 
     /**
