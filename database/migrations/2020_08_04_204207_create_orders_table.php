@@ -23,7 +23,7 @@ class CreateOrdersTable extends Migration
 			$table->string('status')->nullable();
 			$table->softDeletes();
             $table->bigInteger('user_id');
-            $table->bigInteger('customerTable_id');
+            $table->bigInteger('customer_table_id');
             $table->bigInteger('product_id');
         });
     }

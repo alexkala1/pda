@@ -4,7 +4,7 @@
 <div class="container">
 	<div class="row justify-content-center">
 		<div class="col-md-8 text-center">
-			<h1>customerTable {{ $id }}</h1>
+			<h1>customer_table {{ $id }}</h1>
 			<br>
 			@if(isset($order))
 			Συνολο: {{ $order->price }} Ευρω

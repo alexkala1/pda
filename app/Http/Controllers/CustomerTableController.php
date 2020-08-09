@@ -16,8 +16,8 @@ class CustomerTableController extends Controller
      */
     public function index()
 	{
-		$customerTables = CustomerTable::all();
-        return view('customer_table.index', ['customerTables' => $customerTables]);
+		$customer_tables = CustomerTable::all();
+        return view('customer_table.index', ['customer_tables' => $customer_tables]);
     }
 
     /**
@@ -49,7 +49,7 @@ class CustomerTableController extends Controller
      */
     public function show($id)
     {
-        return view('customer_table.show', ['id' => $id, 'order' => Order::where('customerTable_id', $id)->first()]);
+        return view('customer_table.show', ['id' => $id, 'order' => Order::where('customer_table_id', $id)->first()]);
     }
 
     /**

@@ -38,7 +38,7 @@ class DatabaseSeeder extends Seeder
 					'price' => mt_rand(100, 1000) / 10,
 					'has_paid' => (bool)random_int(0,1),
 					'user_id' => 1,
-					'customerTable_id' => $table->id,
+					'customer_table_id' => $table->id,
 					'product_id' => mt_rand(1,50)
 				]);
 				if ($order->has_paid == 'true') {

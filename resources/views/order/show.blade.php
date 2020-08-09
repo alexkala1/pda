@@ -19,7 +19,7 @@
 			<form method="POST" action="{{ route('order.store') }}">
 				@csrf
 				<button class="btn btn-primary" name="product_id" value="{{ $product->id }}">{{ $product->name }} - {{ $product->price }}€</button>
-				<input type="hidden" name="customerTable_id" value="{{ $id }}">
+				<input type="hidden" name="customer_table_id" value="{{ $id }}">
 				<input type="hidden" name="price" value="{{ $product->price }}">
 			</form>
 		</div>

@@ -41,7 +41,7 @@ class OrderController extends Controller
 		Order::create([
 			'user_id' => auth()->user()->id,
 			'product_id' => $request->product_id,
-			'customerTable_id' => $request->customerTable_id,
+			'customer_table_id' => $request->customer_table_id,
 			'price' => $request->price
 		]);
 
@@ -63,7 +63,7 @@ class OrderController extends Controller
         return view ('order.show', [
 			'id' => $id,
 			'products' => Product::all(),
-			'order' => Order::where('customerTable_id', $id)->first()
+			'order' => Order::where('customer_table_id', $id)->first()
 			]);
     }
 

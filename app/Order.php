@@ -16,11 +16,11 @@ class Order extends Model
 		'notes',
 		'status',
 		'user_id',
-		'customerTable_id',
+		'customer_table_id',
 		'product_id',
 	];
 
-	public function customerTables()
+	public function customer_tables()
 	{
 		return $this->belongsTo('App\CustomerTable');
 	}

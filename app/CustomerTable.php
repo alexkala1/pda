@@ -19,7 +19,7 @@ class CustomerTable extends Model
 
     public function Orders()
     {
-        return $this->hasOne('App\Order');
+        return $this->hasMany('App\Order');
 	}
 
 	public function getStatusAttribute()

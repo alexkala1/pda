@@ -31,6 +31,6 @@ class CreateCustomerTablesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('customerTables');
+        Schema::dropIfExists('customer_tables');
     }
 }
