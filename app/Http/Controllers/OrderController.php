@@ -17,7 +17,9 @@ class OrderController extends Controller
      */
     public function index()
     {
-        return view('order.index', ['paraggelies' => Order::all()]);
+		$orders = Order::where('has_paid', FALSE)->get();
+
+        return view('order.index', ['orders' => $orders]);
     }
 
     /**

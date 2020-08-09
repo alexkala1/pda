@@ -18,10 +18,12 @@
 						Customers: {{ $customer_table->customers}}
 						<br>
 						Price: {{ $customer_table->orders[0]->price }}
+						<br>
+						Has Customer Paid: {{ $customer_table->orders[0]->has_paid == null ? 'No' : $customer_table->orders[0]->payment_amount }}
 					</div>
 					<br>
 					<a href="{{ route('customer_table.show' , $customer_table->id) }}" type="button" class="btn btn-block btn-primary">Submit an order</a>
-					@if($customer_table->orders[0]->has_paid == false)
+					@if($customer_table->orders[0]->has_paid == null)
 					<br>
 					<a href="{{ route('customer_table.show' , $customer_table->id) }}" type="button" class="btn btn-block btn-primary">Receive Payment</a>
 					@endif
