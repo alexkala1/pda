@@ -29,7 +29,7 @@ class CustomerTable extends Model
 		}
 
 		if ($this->order_id == null) {
-			return 'Pending';
+			return 'Ordered';
 		} else {
 			return 'An order is awaiting';
 		}

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Order;
-Use Alert;
+Use RealRashid\SweetAlert\Facades\Alert;
 
 
 class OrderController extends Controller
@@ -44,8 +44,8 @@ class OrderController extends Controller
 			'customerTable_id' => $request->customerTable_id,
 			'price' => $request->price
 		]);
-		Alert::alert('success', 'Successfully Placed Order');
-		return back();
+
+		return redirect()->back()->withSuccessMessage('Order Placed Successfully');
     }
 
     /**
@@ -56,6 +56,10 @@ class OrderController extends Controller
      */
 	public function show($id)
     {
+		if(session('success_message')){
+			Alert::success('Success', session('Success Message'));
+		}
+
         return view ('order.show', [
 			'id' => $id,
 			'products' => Product::all(),
