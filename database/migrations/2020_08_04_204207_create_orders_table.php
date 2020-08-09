@@ -17,7 +17,7 @@ class CreateOrdersTable extends Migration
             $table->id();
             $table->timestamps();
             $table->float('price');
-            $table->string('payment_status')->default('pending');
+            $table->boolean('has_paid')->default(false);
             $table->integer('payment_amount')->nullable();
             $table->string('notes')->nullable();
 			$table->string('status')->nullable();
