@@ -2,20 +2,18 @@
 
 @section('content')
 <div class="container">
-	<div class="row justify-content-center">
+	<div class="row">
 		@if(isset($orders))
-		<div class="col-md-8 dataTables_wrapper dt-bootstrap4">
-			<table class="table table-striped table-bordered" id="orders-datatable">
-				<thead>
-					<tr>
-						<th scope="col" class="text-center">ID</th>
-						<th scope="col" class="text-center">Table</th>
-						<th scope="col" class="text-center">Operator</th>
-						<th scope="col" class="text-center">Price</th>
-					</tr>
-				</thead>
-			</table>
-		</div>
+		<table class="table table-striped table-bordered dataTable" id="orders-datatable">
+			<thead>
+				<tr>
+					<th scope="col" class="text-center">ID</th>
+					<th scope="col" class="text-center">Table</th>
+					<th scope="col" class="text-center">Operator</th>
+					<th scope="col" class="text-center">Price</th>
+				</tr>
+			</thead>
+		</table>
 		@else
 		<h1>No orders available</h1>
 		@endif
