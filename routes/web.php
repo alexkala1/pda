@@ -33,4 +33,4 @@ Route::get('/customerTable/{id}', 'CustomerTableController@show')->name('custome
 Route::get('/customerTable/{id}/order', 'OrderController@show')->name('order.show');
 Route::post('/order', 'OrderController@store')->name('order.store');
 Route::get('/order', 'OrderController@index')->name('order.index');
-Route::get('/product', 'HomeController@productta')->name('productta');
+Route::get('/order/list', 'OrderController@list')->name('order.list');

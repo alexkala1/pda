@@ -4,28 +4,16 @@
 <div class="container">
 	<div class="row justify-content-center">
 		@if(isset($orders))
-		<div class="col-md-8">
-			<table class="table table-striped">
+		<div class="col-md-8 dataTables_wrapper dt-bootstrap4">
+			<table class="table table-striped table-bordered" id="orders-datatable">
 				<thead>
 					<tr>
 						<th scope="col" class="text-center">ID</th>
 						<th scope="col" class="text-center">Table</th>
 						<th scope="col" class="text-center">Operator</th>
 						<th scope="col" class="text-center">Price</th>
-						<th scope="col" class="text-center">Action</th>
 					</tr>
 				</thead>
-				<tbody>
-					@foreach($orders as $order)
-					<tr>
-						<th scope="row" class="align-middle text-center">{{ $order->id }}</th>
-						<td class="align-middle text-center">{{ $order->customer_table_id }}</td>
-						<td class="align-middle text-center">{{ $order->user_id }}</td>
-						<td class="align-middle text-center">{{ $order->price }}</td>
-						<td class="align-middle text-center"><button class="btn btn-primary">Close Order</button></td>
-					</tr>
-				@endforeach
-				</tbody>
 			</table>
 		</div>
 		@else
@@ -35,3 +23,34 @@
 </div>
 
 @endsection
+
+<script>
+	window.addEventListener('load', function() {
+		$(function() {
+
+			$('#orders-datatable').DataTable({
+				processing: true,
+				serverSide: true,
+				order: [1, 'asc'],
+				ajax: "{{ url('order/list') }}",
+				columns: [{
+						data: 'id',
+						name: 'ID'
+					},
+					{
+						data: 'customer_table_id',
+						name: 'Table'
+					},
+					{
+						data: 'user_id',
+						name: 'Operator'
+					},
+					{
+						data: 'price',
+						name: 'price'
+					},
+				]
+			})
+		})
+	})
+</script>

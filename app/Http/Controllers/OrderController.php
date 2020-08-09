@@ -101,5 +101,12 @@ class OrderController extends Controller
     public function destroy($id)
     {
         //
-    }
+	}
+
+	public function list()
+	{
+		$orders = Order::all();
+
+		return datatables()->of($orders)->make(true);
+	}
 }
