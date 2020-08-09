@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+@if (Session::has('success'))
+<div class="alert alert-success">
+	<!-- {{ Alert::success('Done', 'Successful order') }} -->
+</div>
+@endif
 
 <div class="container">
 	<div class="row justify-content-center">
