@@ -8,7 +8,7 @@
 			<br>
 			@if(isset($order))
 			Συνολο: {{ $order->price }} Ευρω
-			{{ dump($order->productta) }}
+			{{ dump($order) }}
 			@else
 			Den yparxoun paraggelies.
 			@endif
