@@ -18,7 +18,7 @@ class CreateOrdersTable extends Migration
             $table->timestamps();
             $table->float('price');
             $table->boolean('has_paid')->default(false);
-            $table->integer('payment_amount')->nullable();
+            $table->float('payment_amount')->nullable();
             $table->string('notes')->nullable();
 			$table->string('status')->nullable();
 			$table->softDeletes();

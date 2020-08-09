@@ -42,7 +42,9 @@ class DatabaseSeeder extends Seeder
 					'product_id' => mt_rand(1,50)
 				]);
 				if ($order->has_paid == 'true') {
-					$order->payment_amount = $order->price;
+					Order::find($order->id)->update([
+						'payment_amount' => $order->price
+					]);
 				}
 			}
 		}
