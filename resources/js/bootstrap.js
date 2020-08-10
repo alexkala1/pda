@@ -10,8 +10,8 @@ try {
     window.Popper = require('popper.js').default;
 	global.$ = global.jQuery = require('jquery');
 
-	require('datatables.net')
-	require('datatables.net-bs')
+    require('datatables.net')
+    require('datatables.net-bs')
     require('bootstrap');
 } catch (e) {}
 
