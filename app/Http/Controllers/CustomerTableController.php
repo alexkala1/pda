@@ -16,8 +16,7 @@ class CustomerTableController extends Controller
      */
     public function index()
 	{
-		$customer_tables = CustomerTable::all();
-		// dd($customer_tables[2]->orders[0]);
+		$customer_tables = CustomerTable::all()->sortBy('id');
         return view('customer_table.index', ['customer_tables' => $customer_tables]);
     }
 

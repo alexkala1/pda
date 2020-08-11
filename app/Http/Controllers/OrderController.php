@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Order;
+use App\CustomerTable;
 Use RealRashid\SweetAlert\Facades\Alert;
 
 
@@ -40,14 +41,21 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'customers' => 'required|integer',
+        ]);
+
+        $table_ordered = CustomerTable::where('id', $request->customer_table_id)->get();
+        $table_ordered[0]->update(['customers' => $request->customers]);
+
 		Order::create([
 			'user_id' => auth()->user()->id,
 			'product_id' => $request->product_id,
 			'customer_table_id' => $request->customer_table_id,
 			'price' => $request->price
-		]);
+        ]);
 
-		return redirect()->back()->withSuccessMessage('Order Placed Successfully');
+		return redirect('/customerTable')->with('success', 'Order Placed Successfully');
     }
 
     /**
