@@ -8,7 +8,12 @@
 			<br>
 			@if(isset($order))
 			Συνολο: {{ $order->price }} Ευρω
-			{{ $order }}
+			<br>
+			Παραγγελια: {{ $order->id }}
+			<br>
+			Δημιουργηθηκε: {{ $order->created_at }}
+			<br>
+			Πληρωθηκε: {{$order->has_paid == null ? 'Οχι' :'Ναι' }}
 			@else
 			Den yparxoun paraggelies.
 			@endif
