@@ -20,7 +20,8 @@ class CreateProductsTable extends Migration
             $table->string('prefix');
 			$table->string('type');
 			$table->softDeletes();
-            $table->string('category');
+			$table->string('category');
+			$table->integer('amount')->nullable();
             $table->string('ingredients')->nullable();
             $table->float('price', 2);
             $table->boolean('availability');
